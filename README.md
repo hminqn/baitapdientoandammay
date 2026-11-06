@@ -101,7 +101,7 @@ Kết quả mong đợi: 2 tests, 0 failures, 0 errors; chương trình in `Hell
 6. Artifact JAR và console có Hello Jenkins!.
 7. Build mới tự chạy sau commit push, có nguyên nhân Started by an SCM change.
 
-Chưa cung cấp ảnh minh chứng vì chưa chạy được Jenkins thực tế. Không dùng phần kết quả dự kiến làm minh chứng thực thi.
+Đã chụp ảnh minh chứng trực tiếp trên Jenkins, gồm HelloWorld, Maven, kết quả test, artifact và repository GitHub. Bộ ảnh cùng báo cáo được lưu trong thư mục output trên máy thực hành.
 
 ## 9. Lỗi thường gặp
 
@@ -117,7 +117,7 @@ Chưa cung cấp ảnh minh chứng vì chưa chạy được Jenkins thực t�
 
 ## 10. Trạng thái xác minh
 
-Đã chạy thực tế ngày 06/11/2026: Maven clean verify thành công, 2 test đạt, JAR in Hello Jenkins!. Đã dựng Jenkins cục bộ và chạy HelloWorldPipeline #1 cùng MavenLocalDemo #1, cả hai SUCCESS. Bản demo Maven dùng snapshot mã nguồn, Java 21 biên dịch release 11 và chưa kết nối GitHub. Chi tiết, log và công cụ ở thư mục jenkins-runtime cạnh thư mục này. Jenkinsfile gốc vẫn yêu cầu cấu hình Tools và SCM như hướng dẫn trên để chạy đầy đủ tích hợp GitHub.
+Đã chạy thực tế ngày 06/11/2026: Maven clean verify thành công, 2 test đạt, JAR in Hello Jenkins!. HelloWorldPipeline #1 và MavenLocalDemo #1 đều SUCCESS. Đã kết nối repository này với job MavenTestProject trên Jenkins cục bộ; build #2 checkout từ GitHub và hoàn tất SUCCESS. Jenkinsfile trên nhánh main dùng Maven 3.8.6, JDK21 và biên dịch release 11; lịch pollSCM kiểm tra thay đổi khoảng mỗi 5 phút. Log và công cụ nằm trong jenkins-runtime trên máy thực hành. Xem CI-SETUP.md để tái lập cấu hình SCM.
 
 Tài liệu đối chiếu:
 - https://www.jenkins.io/doc/book/pipeline/syntax/
